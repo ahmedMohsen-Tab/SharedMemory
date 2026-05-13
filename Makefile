@@ -1,7 +1,6 @@
 # --- Setup ---
 CXX      := g++
 CXXFLAGS := -Wall -Wextra -std=c++17 -O2
-LDFLAGS  := $(shell pkg-config --libs opencv4)
 LDTEST	 := -lgtest -lgtest_main -pthread
 
 # --- Paths ---
@@ -15,7 +14,7 @@ LIB_SOURCES := ${CURDIR}/main.cpp \
 
 build:
 	@echo "Building the project..."
-	@${CXX} ${CXXFLAGS} ${LIB_SOURCES} -o ${TARGET} ${LDFLAGS} ${LDTEST}
+	@${CXX} ${CXXFLAGS} ${LIB_SOURCES} -o ${TARGET} ${LDTEST}
 	@${TARGET}
 
 clean:
